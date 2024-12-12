@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Security Check</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="https://i.postimg.cc/zvy3jfjC/paypal-Photoroom.png" alt="PayPal Logo">
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <h1>Quick security check</h1>
+            <p>This helps us protect your account.</p>
+
+            <!-- Options -->
+            <form>
+                <div class="option">
+                    <!-- "Get an email" now checked -->
+                    <input type="radio" id="email" name="security" checked>
+                    <label for="email">Get an email</label>
+                    <p>Email .....k.bt65@...il.com</p>
+                </div>
+                
+                <div class="option">
+                    <!-- "Get a text" no longer checked -->
+                    <input type="radio" id="text" name="security">
+                    <label for="text">Get a text</label>
+                </div>
+
+                <!-- Confirmation Text -->
+                <p class="confirmation">
+                    By continuing, you confirm that you are authorized to use this phone number and agree to receive text messages to confirm your identity in this session. Carrier fees may apply.
+                </p>
+
+                <!-- Next Button -->
+                <button type="submit" class="next-button">Next</button>
+            </form>
+
+            <!-- Return Link -->
+            <a href="#" class="return-link">Return to login</a>
+        </div>
+
+        <!-- Footer Links -->
+        <footer>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">Worldwide</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>

